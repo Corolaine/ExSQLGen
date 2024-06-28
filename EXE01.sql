@@ -1,28 +1,25 @@
-CREATE DATABASE IF NOT EXISTS db_escola;
-USE db_escola;
+CREATE DATABASE db_empresa;
+USE db_empresa;
 
-CREATE TABLE IF NOT EXISTS tb_escola (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL,
-    idade INT NOT NULL,
-    turma VARCHAR(255) NOT NULL,
-    nota DECIMAL(10,2) NOT NULL,
-    faltas INT NOT NULL
-);
+CREATE TABLE tb_empresa(
+id BIGINT  AUTO_INCREMENT,
+	nome VARCHAR (255) NOT NULL,
+    departamento VARCHAR (255) NOT NULL,
+    salario DECIMAL (10,2) NOT NULL,
+    cargo VARCHAR (255) NOT NULL,
+    documento VARCHAR (255) NOT NULL
+    );
     
-INSERT INTO tb_escola (nome, idade, turma, nota, faltas) VALUES
-('Manuel', 11, '1A', 7.0, 3),
-('Rafaela', 12, '1B', 10.0, 1),
-('Bruno', 11, '1B', 10.0, 0),
-('Clara', 10, '1A', 6.0, 8),
-('Rogéria', 12, '1A', 9.0, 6),
-('Marcelo', 13, '1A', 7.5, 4),
-('Yara', 12, '1A', 10.0, 5),
-('Mariana', 10, '1B', 9.6, 2);
+INSERT INTO tb_empresa (nome, departamento, salario, cargo, documento) VALUES
+('Carlos', 'Administrativo', 1700.00, 'Assistente Administrativo', 'RG'),
+('Margarida', 'TI', 3400.00, 'Analista de Sistemas', 'CPF'),
+('Matheus', 'Projetos', 5000.00, 'Gerente de Projetos', 'CPF'),
+('Sheyla', 'Marketing', 2490.00, 'Designer', 'CPF'),
+('Edinéia', 'TI', 6000.00, 'Desenvolvedora', 'RG');
 
-SELECT * FROM tb_escola WHERE valor > 7.0;
-SELECT * FROM tb_escola WHERE valor < 7.0;
+SELECT * FROM tb_empresa WHERE salario > 2000.00;
+SELECT * FROM tb_empresa WHERE salario < 2000.00;
 
-UPDATE tb_escola SET nota = 8 WHERE id = 4;
+UPDATE tb_empresa SET salario = 4500.00 WHERE id = 5;
 
-SELECT * FROM tb_escola;
+SELECT * FROM tb_empresa;
